@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Predicting the Rate of COVID-19 Daily Deaths in California and Florida | Dai Dong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Katherine Vorpea, Dai Dong">
+    <meta name="generator" content="Hugo 0.87.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+<link rel="stylesheet" href="/DaiDong_Portfolio/ananke/css/main.min.css" >
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Predicting the Rate of COVID-19 Daily Deaths in California and Florida" />
+<meta property="og:description" content="Katherine Vorpea, Dai Dong" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vdai1999.github.io/DaiDong_Portfolio/post/chapter-2/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-05-15T11:00:59-04:00" />
+<meta property="article:modified_time" content="2021-05-15T11:00:59-04:00" /><meta property="og:site_name" content="Dai Dong" />
+
+<meta itemprop="name" content="Predicting the Rate of COVID-19 Daily Deaths in California and Florida">
+<meta itemprop="description" content="Katherine Vorpea, Dai Dong"><meta itemprop="datePublished" content="2021-05-15T11:00:59-04:00" />
+<meta itemprop="dateModified" content="2021-05-15T11:00:59-04:00" />
+<meta itemprop="wordCount" content="3606">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Predicting the Rate of COVID-19 Daily Deaths in California and Florida"/>
+<meta name="twitter:description" content="Katherine Vorpea, Dai Dong"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://vdai1999.github.io/DaiDong_Portfolio/images/fusion-medical-animation-rnr8D3FNUNY-unsplash.jpg');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/DaiDong_Portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Dai Dong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/DaiDong_Portfolio/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/DaiDong_Portfolio/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/DaiDong_Portfolio/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+<a href="https://github.com/VDai1999" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Predicting the Rate of COVID-19 Daily Deaths in California and Florida</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Katherine Vorpea, Dai Dong
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+      <h1 class="f1 athelas mt3 mb1">Predicting the Rate of COVID-19 Daily Deaths in California and Florida</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-05-15T11:00:59-04:00">May 15, 2021</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>Coronavirus-19, or COVID-19, has been a global pandemic that has shocked the world for over a year now. Non-essential workers work from home, essential workers risk their lives and go in to work, some companies have laid hundreds if not thousands of employees off, businesses shut down, and families and friends have lost many loved ones due to COVID-19. Furthermore, the impact of COVID-19 has been clear-cut for the healthcare industry in the United States and worldwide. Nurses and healthcare workers worldwide risk their lives every day, overworking themselves to try to keep up with the pace of the number of patients in the hospitals, fighting COVID-19 and nurturing patients exposed and sick with COVID-19. According to the CDC website, COVID-19 is transmitted by exposure to infectious respiratory fluids, most commonly by people inhaling very small respiratory droplets. The risk of becoming infected with COVID-19 varies according to the amount of virus to which a person is exposed, distance from the source, and ventilation of the space.</p>
+<p>In the United States, there have been many different reactions, policies, and mandates put in place across the states. Different regions have different levels of shut downs and policies concerning what action to take to lower the daily death counts of COVID-19. Florida is one of the states that has famously-relaxed mandates concerning COVID-19. Resorts, beaches, and tourist attractions of all varieties have remained open in an effort to maintain the economy and revenue. The news and the media have shown that people continue to travel to Florida in the midst of COVID-19. Consequently, the news has shown a correlation between the increase in visitors with the increase in daily deaths due to COVID-19 in Florida. Moreover, a massive influx of travel to California and the dense population of California has led to a similar increase in the daily deaths due to COVID-19 in California. Therefore, we would like to analyze the daily deaths due to COVID-19 in Florida and Texas.</p>
+<figure><img src="https://vdai1999.github.io/DaiDong_Portfolio/images/Picture3.png"/><figcaption>
+            <h4>Figure 1: Trends in California and Florida  daily death counts (obtained by the CDC COVID-19 tracker)</h4>
+        </figcaption>
+</figure>
+
+<p>In Figure 1, we see the variations of the daily death count in each state from March 2020 to April 2021 with Florida in black and California in red. The aim of our project is to determine if each state has a stationary time series, and if not, we determine how to transform the data into stationary time series. Then, we fit various ARIMA models, according to what fits each state’s time series the best. Finally, we forecast and predict future daily death counts (the death counts of April 27, 28, 29, and 30th). Since the CDC website has the actual daily death counts for April 27, 28, 29, and 30th, we compare the forecasted results with the actual daily death counts, which reflects how well our models will predict future daily death counts for each state.</p>
+<h3 id="data-sources-and-collection">Data Sources and Collection</h3>
+<p>Data for the analyses were retrieved from the Center for Disease Control and Prevention (CDC). The most recent records were updated on May 7, 2021. Since the daily death count is not greater than zero until approximately the end of February 2020 for each state, we focus on March 11, 2020 to April 26, 2021 in our report.</p>
+<h3 id="material-and-methods">Material and Methods</h3>
+<p>An autoregressive integrated moving average (ARIMA) model is one of the most popular models in time series analysis with the purposes of forecasting future values or understanding the behavior of the data. It is the generalization of an ARMA model and can be used to transform the non-stationary process into the stationary process through differencing (if necessary). An ARIMA model can be used to model non-seasonal time series that is not a random white noise and has patterns. There are three components which are an <em>AR(p)</em>, an <em>I(d)</em>, and an <em>MA(q)</em> process where p is the order of the autoregressive term, d is the degree of differencing to make the process stationary, and q is the order of the moving average term. First, we must create a holdout set in order to test the performance of the ARIMA models before then applying those models to the entire data set. The training set we chose for each state is the data collected from March 11, 2020 to April 19, 2021 and the test set we chose for each state for forecasting is the data collected from April 20, 2021 to April 26, 2021. However, before we find ARIMA models for the data, we perform the Dickey-Fuller test to determine if the training set and test set are stationary. Therefore, if we reject the null hypothesis, then our training set is stationary, and if we fail to reject the null hypothesis, then our training set is not stationary. The threshold we use to reject or fail to reject the null hypothesis test is 0.05.</p>
+<p>Besides the ARIMA models, we will also consider the exponential smoothing and Holt-Winters (trend component only) models. We only fit additive models because the multiplicative model cannot be used when the original time series has 0 values. Moreover, to aid in the effort of choosing the best models and showing the effectiveness of the performance of the models, we conduct the Ljung-Box Test, check the residual plots, ACF and PACF plots, and perform the unit root test to check stationarity. We also compare RMSE, MAE, and MAPE values to see which model has the smallest values for each, which allows us to determine which model would be the best. For the Ljung-Box Test, if the p-value is really small, we have sufficient evidence to infer that the error terms are uncorrelated, which tells us that the model is not a good model for the data. On the other hand, if the p-value is large, then we do not have significant evidence to infer that the error terms are uncorrelated, which tells us that the model is a good model for the data. For the unit root test, if all coefficient moduli are greater than one, then the lengths of the moduli exceed the radius of the unit circle. This implies that the chosen model is indeed stationary. In addition, the logarithms transformation method is also considered to help stabilize the variance of the series. However, instead of applying the log transformation directly, we do <em>log(x+1)</em> transformation because the original series includes zero values.</p>
+<h3 id="results">Results</h3>
+<p>The first step in the process of finding the best models was to create a time series object from the data and create an initial visualization of the data. We created a time series object and initial visualization for the training set and the entire data set. Then, we conducted the Dickey-Fuller test to determine stationarity for the training set. At this juncture, we saw what models are the best fit using the <em>auto.arima()</em> function, analyzing ACF and PACF plots, and using the log transformation method for the training set. Furthermore, we conducted diagnostic checking with the models that have the lowest RMSE, MAE, and MAPE. This important step involves model validation with regression models. Then, we applied these models to the entire data set. Finally, we forecasted using the validated model.</p>
+<h3 id="achieving-stationarity">Achieving Stationarity</h3>
+<figure><img src="https://vdai1999.github.io/DaiDong_Portfolio/images/Picture4.png"/><figcaption>
+            <h4>Figure 2: ACF plots of the original California and Florida series.</h4>
+        </figcaption>
+</figure>
+
+<p>Since models that are non-stationary are not suitable for forecasting processes, we require stationarity. There are several methods to test stationarity. We used the aforementioned Dickey-Fuller test and ACF plots to determine stationarity. From Figure 2, the autocorrelations of California exhibit a slow decay to zero which is an indication of a non-stationary time series. The Dickey-Fuller test performed on the California series also established that the series is not stationary with a high p-value of 0.9899. Therefore, the time series of daily deaths in California had to be differentiated. The <em>auto.arima()</em> function in R was used to detect the correct order of differencing. We used all three criteria which are BIC, AIC, and AICc to select the best differencing for each series. The California time series requires one order of differencing. Moreover, as mentioned above, we also considered the log transformation approach to make the series have a stabilized variance. Observing from Fig. 1, the variance of the California time series increases over time. After taking <em>log(x+1)</em> transformation, the same procedure of investigating ACF plots and conducting the Dickey-Fuller test was applied to select the number of differencing. The log-transformed series of California also needs one differencing.</p>
+<p>From Figure 2, the autocorrelations of Florida exhibit a slow decay to zero which is an indication of a non-stationary time series. The Dickey-Fuller test performed on the Florida series also establishes that the series is not stationary with a high p-value of 0.8975. Therefore, the time series of daily deaths in Florida is differenced. The <em>auto.arima()</em> function in R is used to detect the correct order of differencing. We use three criteria which are BIC, AIC, and AICC to select the best differencing for each series. The Florida time series needs one order of differencing. Moreover, we also consider the log transformation approach to make the series have a stabilized variance. Observing from Figure 1, the variance of the Florida time series increases over time. Utilizing the <em>log(x+1)</em> transformation, the same procedure of investigating ACF plots and we conduct the Dickey-Fuller test applied to select the order of differencing. The log-transformed series of Florida requires one order of differencing.</p>
+<h3 id="selecting-the-orders-and-estimating-the-parameters-of-the-_arimapdq_-model">Selecting the Orders and Estimating the Parameters of the <em>ARIMA(p,d,q)</em> Model</h3>
+<p>To tentatively choose the order of the autoregressive and moving average processes, we analyze the ACF and PACF plots of the data. If the ACF shows a cut-off while the PACF decays slowly, it means that the series is likely to be fitted to a MA model. In contrast, a cut-off in the PACF and a slow decay in the ACF imply that the series has AR characteristics. In general, the p order of the AR term can be determined if we observe a sharp cut-off after lag p in the PACF. Similarly, if the ACF cuts off sharply after lag q, it means that the series can be fitted to a <em>MA(q)</em> model. However, it is more difficult to determine the order of an <em>ARMA(p,q)</em> model since both ACF and PACF display a tail-off behavior.</p>
+<p>However, with the assistance of <em>auto.arima()</em> function, not only can we determine the order of differencing but we can also estimate the order of the AR and MA terms. After applying the first differencing to the original California time series, an <em>ARIMA(4,1,2)</em> and an <em>ARI(6,1)</em> are the best fit for the data using ACF, PACF, and <em>auto.arima()</em> function. On the other hand, <em>ARIMA(5,1,2)</em> and <em>ARIMA(5,1,3)</em> were selected for the log-transformed series after being differentiated once. Similarly, for the Florida data, with the assistance of <em>auto.arima()</em> function, not only can we determine the order of differencing but we can also estimate the order of the AR and MA terms. After applying the first differencing to the original Florida time series, an <em>ARIMA(2,1,2)</em> and an <em>ARI(6,1)</em> are the best fit for the data using ACF, PACF, and <em>auto.arima()</em> function. On the other hand, <em>ARIMA(5,1,2)</em> and <em>ARIMA(5,1,5)</em> are selected for the log-transformed series after being differentiated once.</p>
+<h3 id="exponential-smoothing-and-additive-holt-winters-models">Exponential Smoothing and Additive Holt-Winters Models</h3>
+<p>Besides ARIMA models, exponential smoothing and additive Holt-Winters methods are also considered. Unlike ARIMA models, both exponential smoothing and additive Holt-Winters can be directly constructed using the HoltWinters function without the requirement of investigating ACF and PACF plots. For the characteristics of three selected series, we only fitted the exponential smoothing and additive Holt-Winters model for the trend component only. For fitting the two models, Table 1 exhibits the output of the exponential smoothing and additive Holt-Winters model for the trend component only.</p>
+<figure><img src="https://vdai1999.github.io/DaiDong_Portfolio/images/Picture5.png"/><figcaption>
+            <h4>Table 1: Exponential Smoothing and Holt-Winter for Trend Outputs.</h4>
+        </figcaption>
+</figure>
+
+<h3 id="forecasting-covid-19-using-the-validated-sets">Forecasting COVID-19 Using the Validated Sets</h3>
+<p>To pick the best model to predict the daily deaths, we use RMSE, MAE, and MAPE calculated based on the validation set as metrics to compare models. However, non-transformed and log-transformed models are not comparable because of the difference in units. Therefore, the best non-transformed and transformed models will be selected to perform diagnostic tests. From Table 2, it appears that <em>ARI(6,1)</em> is the best model to predict the California series because of its lowest tested RMSE, MAE, and MAPE among 4 non-transformed models. Table 3 suggests that <em>ARIMA(5,1,3)</em> is better at forecasting when comparing two transformed models since it also has a lower RMSE, MAE, and MAPE compared to the other model. It can also be observed from Figure 3 and Figure 4. <em>ARI(6,1)</em> and <em>ARIMA(5,1,3)</em> have the best performance on predicting California’s daily deaths. Moreover, from Table 2, it appears that <em>ARI(6,1)</em> or the Exponential Smoothing are the best models among 4 non-transformed models for the Florida series since it has the lowest test RMSE, MAE, and MAPE scores. Furthermore, the log-transformed <em>ARIMA(5,1,5)</em> is a better model compared to the <em>ARIMA(5,1,2)</em> model for the Florida series since it has smaller RMSE, MAE, and MAPE scores. We will further investigate the non-transformed <em>ARI(6,1)</em> and log-transformed ARIMA(5,1,5) models for the Florida series.</p>
+<figure><img src="https://vdai1999.github.io/DaiDong_Portfolio/images/Picture6.png"/><figcaption>
+            <h4>Figure 3: Models Comparison: Forecasted daily deaths from April 20, 2021 to April 26, 2021 (Non-transformed Models).</h4>
+        </figcaption>
+</figure>
+
+<figure><img src="https://vdai1999.github.io/DaiDong_Portfolio/images/Picture7.png"/><figcaption>
+            <h4>Figure 4: Models Comparison: Forecasted daily deaths from April 20, 2021 to April 26, 2021 (Log-transformed Models).</h4>
+        </figcaption>
+</figure>
+
+<figure><img src="https://vdai1999.github.io/DaiDong_Portfolio/images/Picture8.png"/><figcaption>
+            <h4>Table 2: RMSE, MAE, and MAPE for Fitted Models Using Validation Data (Non-transformed  Model).</h4>
+        </figcaption>
+</figure>
+
+<figure><img src="https://vdai1999.github.io/DaiDong_Portfolio/images/Picture9.png"/><figcaption>
+            <h4>Table 3: RMSE, MAE, and MAPE for Fitted Models Using Validation Data (Log-transformed  Model).</h4>
+        </figcaption>
+</figure>
+
+<h3 id="diagnostic-checking-and-validating-the-model">Diagnostic Checking and Validating the Model</h3>
+<p>So far, we have narrowed down our search for the best model by using summary reports including the RMSE, MAE and MAPE values. Now a cross-validation is done to choose the best model. For each state, we check the residuals and run the Ljung-Box test to determine if we have sufficient evidence to infer that the error terms are uncorrelated or correlated. If uncorrelated, we conclude that our models are not a good fit, and if correlated, we conclude that our models are a good fit for the data. This will further narrow down our search for the best model.</p>
+<figure><img src="https://vdai1999.github.io/DaiDong_Portfolio/images/Picture10.png"/><figcaption>
+            <h4>Figure 6: Residual and ACF plots for the Florida ARIMA models (left: ARI(6,1) right: ARIMA(5,1,5)).</h4>
+        </figcaption>
+</figure>
+
+<p>For the California data set, we further investigate the non-transformed <em>ARI(6,1)</em> and log-transformed ARIMA(5,1,3) models. First, we refit the <em>ARI(6,1)</em> model to the whole data set. Figure 5 shows the plot of the residuals and the ACF plot for the <em>ARI(6,1)</em> model. We can see there are some statistically significant correlations. They do not seem to appear due to randomness. The Ljung-Box Test is used to analyze the possible significance of autocorrelation values in the  <em>ARI(6,1)</em> model. The <em>ARI(6,1)</em> model gives a chi-squared value of 60.779 with 9 degrees of freedom. The p-value is really small (&lt;0.001). This means that we do have sufficient evidence to infer that the error terms are uncorrelated. In other words, the <em>ARI(6,1)</em> model does not seem to be a good model.</p>
+<p>Second, for the California data set, we further investigate the log-transformed <em>ARIMA(5,1,3)</em> model and refit the <em>ARIMA(5,1,3)</em> model to the whole data set. Figure 5 shows the plot of the residuals and the ACF plot for the <em>ARIMA(5,1,3)</em> model. We can see that there is only 1 significant correlation based on the ACF of residuals plot above and they seem to happen because of randomness. The Ljung-Box Test is used to analyze the possible significance of autocorrelation values in the  <em>ARIMA(5,1,3)</em> model. Since the p-value of the Ljung-Box test is large for the first 15 selected lags, we don’t have sufficient evidence to infer that the error terms are uncorrelated. Thus, the log-transformed <em>ARIMA(5,1,3)</em> seems to be a good model.</p>
+<h3 id="predictions-of-number-of-daily-deaths-due-to-covid-19">Predictions of Number of Daily Deaths due to COVID-19</h3>
+<figure><img src="https://vdai1999.github.io/DaiDong_Portfolio/images/Picture11.png"/><figcaption>
+            <h4>Figure 7: Forecasts for the California (left) and Florida (right) time series with the best ARIMA models.</h4>
+        </figcaption>
+</figure>
+
+<p>From the left plot of Figure 7, we can see that the predicted values for California follow the general pattern of the series. The estimated daily deaths on April 27, 2021 are about 18 people and increase to about 113 deaths on April 29, 2021. We also checked with the actual data provided by CDC and we can confirm that our predicted values from April 21, 2021 to April 30, 2021 match the general patterns of the series. The actual daily deaths statistics and the forecasted daily deaths of California from April 21, 2021 to April 30, 2021 are provided in Table 4.</p>
+<figure><img src="https://vdai1999.github.io/DaiDong_Portfolio/images/Picture12.png"/><figcaption>
+            <h4>Table 4: Forecasted Deaths versus Actual Deaths for California Time Series.</h4>
+        </figcaption>
+</figure>
+
+<p>If we compare the forecasted/predicted deaths with the actual deaths, the model does a fairly good job predicting the daily deaths. Therefore, we conclude that this model is a good model to use to predict daily deaths.</p>
+<p>From Figure 7, we can see that the predicted values for Florida follow the general pattern of the series. The estimated daily deaths on April 27, 2021 are about 57 people and increase to about 75 deaths on April 29, 2021. We also checked with the actual data provided by CDC and we can confirm that our predicted values from April 21, 2021 to April 30, 2021 match the general patterns of the series. The actual daily deaths statistics and the forecasted daily deaths of Florida from April 21, 2021 to April 30, 2021 are provided in Table 5.</p>
+<figure><img src="https://vdai1999.github.io/DaiDong_Portfolio/images/Picture13.png"/><figcaption>
+            <h4>Table 5: Forecasted Deaths versus Actual Deaths for Florida Time Series.</h4>
+        </figcaption>
+</figure>
+
+<p>If we compare the forecasted/predicted deaths with the actual deaths, the model does a fairly good job predicting the daily deaths. Therefore, we conclude that this model is a good model to use to predict daily deaths.</p>
+<h3 id="discussion-conclusions-and-policy-making-implications">Discussion, Conclusions, and Policy-Making Implications</h3>
+<p>COVID-19 has created a global pandemic that we are still fighting to this day. With the help of vaccines and mandatory mask policies, we hope that this will lead to an end in this tiring battle against COVID-19. In this project, we forecast COVID-19 using the validated models. We use one of the most common models in time series analysis, the autoregressive integrated moving average, or ARIMA, model on the data obtained from the Centers for Disease Control and Prevention. We also determine if the Additive Holt Winters (trend component only) or Additive Exponential Smoothing models fit our data well. Our results show the prediction of COVID-19 daily death counts in Florida and California. Each state, although having similar daily death counts, have different ARIMA models that are good models for the data. We have found that the <em>ARIMA(4,1,2)</em> and an <em>ARI(6,1)</em> are the best fits for the California daily death count data. On the other hand, <em>ARIMA(5,1,2)</em> and <em>ARIMA(5,1,3)</em> are the best fits for the log transformed California daily death count data. We have found the <em>ARIMA(5,1,5)</em> model is the best fit for the log-transformed Florida daily death count daily. However, after doing the diagnostic tests, we narrowed down the final models which are the log-transformed <em>ARIMA(5,1,3)</em> for California series and the log-transformed <em>ARIMA(5,1,5)</em> as the best models to forecast two series. We conclude that the daily death counts in Florida and California will continue to rise and fall as time goes on, hopefully dissipating once everyone has vaccines and builds resistance against COVID-19, and survives.</p>
+<p>Local governments in every state create different mandates and policies in regards to COVID-19 and the distribution of COVID-19 vaccines. Florida has famously relaxed rules and policies about wearing masks in public and other preventative measures to protect people from COVID-19 exposure. Moreover, due to the dense population in California and heavy traffic of international travel, it has been more difficult to enforce COVID-19 policies in that state. The goal of these mandates and the reinforcement of these policies is to prevent people from exposing and being exposed to COVID-19, which will consequently stop the spread of COVID-19, and consequently dissipate the deaths due to COVID-19. We urge the local governments and the House of Representatives and the Senate to reinforce COVID-19 policies to aid in the cause to end COVID-19.</p>
+<h3 id="limitations-and-future-research">Limitations and Future Research</h3>
+<p>We must make note that COVID-19 data has only been collected over the past year. Therefore, one limitation that this project has is that we do not have enough data to incorporate a seasonal component; so even if there appears to be some sort of cyclical trend to the data, we cannot take that into account when we fit different models to the data with the limited data we have. Although we hope that we do not have to collect data about COVID-19 for much longer, because we hope that the death counts will dissipate, this limits future research because, with this assumption, there will not be much more to analyze or data to add. Therefore, although it is important to analyze COVID-19 data, it is limited in these ways, and future research may confront similar limitations that we encountered.</p>
+<h3 id="reflection">Reflection</h3>
+<p>This project encompasses many important concepts covered in the modules throughout the semester. Throughout the semester, we learned about different ARIMA models and forecasting, but these concepts always felt like separate ideas. In this project, we see how to connect them together and build a bigger picture rather than looking at specific concepts separately. This project has allowed us to understand, step by step, what goes into analyzing time series data. Moreover, reflecting on this project allows us to see the entire scope of what the project encompasses and understand each conclusion that we reach. Lastly, it provides us with good practice to do research and write a research paper.</p>
+<p><a href="https://github.com/VDai1999/Predict_COVID19_DailyDeaths_in_California.git">Link to Github Repository</a></p>
+<h4 id="references">References</h4>
+<p>“CDC COVID Data Tracker.” Centers for Disease Control and Prevention, Centers for Disease Control and Prevention, <a href="https://covid.cdc.gov/covid-data-tracker/#trends_dailytrendscases">https://covid.cdc.gov/covid-data-tracker/#trends_dailytrendscases</a>.</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://vdai1999.github.io/DaiDong_Portfolio/" >
+    &copy;  Dai Dong 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+<a href="https://github.com/VDai1999" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

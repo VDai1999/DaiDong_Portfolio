@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Predicting Music Artists&#39; Concert Sales Using YouTube and Spotify Data | Dai Dong</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Phuong Ho, Ann Nguyen, Hoa Nguyen, Dai Dong">
+    <meta name="generator" content="Hugo 0.87.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+<link rel="stylesheet" href="/DaiDong_Portfolio/ananke/css/main.min.css" >
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Predicting Music Artists&#39; Concert Sales Using YouTube and Spotify Data" />
+<meta property="og:description" content="Phuong Ho, Ann Nguyen, Hoa Nguyen, Dai Dong" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://vdai1999.github.io/DaiDong_Portfolio/post/chapter-1/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2020-05-07T10:58:08-04:00" />
+<meta property="article:modified_time" content="2020-05-07T10:58:08-04:00" /><meta property="og:site_name" content="Dai Dong" />
+
+<meta itemprop="name" content="Predicting Music Artists&#39; Concert Sales Using YouTube and Spotify Data">
+<meta itemprop="description" content="Phuong Ho, Ann Nguyen, Hoa Nguyen, Dai Dong"><meta itemprop="datePublished" content="2020-05-07T10:58:08-04:00" />
+<meta itemprop="dateModified" content="2020-05-07T10:58:08-04:00" />
+<meta itemprop="wordCount" content="1438">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Predicting Music Artists&#39; Concert Sales Using YouTube and Spotify Data"/>
+<meta name="twitter:description" content="Phuong Ho, Ann Nguyen, Hoa Nguyen, Dai Dong"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  
+  
+  <header class="cover bg-top" style="background-image: url('https://vdai1999.github.io/DaiDong_Portfolio/images/spotify.jpeg');">
+    <div class="pb3-m pb6-l bg-black-60">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/DaiDong_Portfolio/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        Dai Dong
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/DaiDong_Portfolio/about/" title="About Me page">
+              About Me
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/DaiDong_Portfolio/contact/" title="Contact page">
+              Contact
+            </a>
+          </li>
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/DaiDong_Portfolio/post/" title="Projects page">
+              Projects
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+<a href="https://github.com/VDai1999" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+      <div class="tc-l pv6 ph3 ph4-ns">
+        
+          <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Predicting Music Artists&#39; Concert Sales Using YouTube and Spotify Data</h1>
+          
+            <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+              Phuong Ho, Ann Nguyen, Hoa Nguyen, Dai Dong
+            </h2>
+          
+        
+      </div>
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        PROJECTS
+      </aside>
+      
+
+      <h1 class="f1 athelas mt3 mb1">Predicting Music Artists&#39; Concert Sales Using YouTube and Spotify Data</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-05-07T10:58:08-04:00">May 7, 2020</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>There is an undeniably popular trend in the entertainment industry nowadays: more and more artists are using YouTube as the platform to market their products. People are definitely used to watching YouTube videos that are heavily invested in, in terms of both time-effort and budget, by top artists around the world. According to Marketwatch.com, Taylor Swift’s “Look what you made me do” music video has a scene of her in a bathtub full of diamonds, which places the cost of making the video higher than 10 million (Wolfson, “5 of the most expensive music videos ever made”). Seeing how much money these top-notched artists have been spending on making YouTube videos, one must wonder how much they are being paid by YouTube for gaining an enormous amount of views. The answer is not much. As reported by complex.com, YouTube will usually pay artists around $1000-$2000 for every million views (Setaro, “How Artists Make Money on YouTube’). Using that information, you can see that Taylor Swift has been making around 1-3 million for the video “Look what you made me do”, as the video has attracted 1+ billion views. This investment in making the music video would have been a huge loss for Taylor Swift and her record label if comparing the YouTube revenue by itself and the cost of making the video. If that is the case, then why are Taylor Swift and artists all around the world investing so much in their music videos? The answer is that they do so for the sake of marketing themselves and their work to the audience. It is highly likely for artists to gain money from other sources if their music video is trending and receives much positive feedback from the audience, i.e. they can get more brand advertisement deals, promote their music worldwide, or sell their albums more successfully, etc. Furthermore, their YouTube music video success will contribute greatly to one of the biggest sources of revenue for a music artist - their concert sales. With that being said, this project focuses on the idea of trying to understand how an artist’s YouTube videos can boost his/her concert sales.</p>
+<h3 id="data-collection-and-preparation">Data Collection and Preparation</h3>
+<p>The three sources of data are Pollstar.com, YouTube, and Spotify. First and foremost, data was collected from Pollstar.com, which is a widely known website for the music concert industry. After having an idea of artists that would be included in the analysis, data was also pulled from YouTube and Spotify. Although the concert sales data was only in 2018 and 2019, data about songs dated back to 2013 until 2020 was retrieved as well, making the assumption that in 2018 concerts artists could still perform songs released much earlier than that, and in 2019 concerts artists could still perform songs released in late 2018 (e.g October onwards) as well as songs released in 2019. While the older songs helped increase the data set size, which was crucial in making the regression ultimately meaningful, the 2020 songs served as the test data points, and the ultimate goal was to generate a model to predict concert sales in 2020. At the end of this step, a list of 162 video IDs along with song names and artist names was formed, and that list of songs and artists was used to get the statistics and comments from YouTube and Spotify.</p>
+<p><strong>List of collected features</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Variables</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">View</td>
+<td style="text-align:left">The number of a video&rsquo;s views</td>
+<td style="text-align:left">YouTube</td>
+</tr>
+<tr>
+<td style="text-align:left">Like</td>
+<td style="text-align:left">The number of a video&rsquo;s likes</td>
+<td style="text-align:left">YouTube</td>
+</tr>
+<tr>
+<td style="text-align:left">Dislike</td>
+<td style="text-align:left">The number of a video&rsquo;s dislikes</td>
+<td style="text-align:left">YouTube</td>
+</tr>
+<tr>
+<td style="text-align:left">danceability</td>
+<td style="text-align:left">Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.</td>
+<td style="text-align:left">Spotify</td>
+</tr>
+<tr>
+<td style="text-align:left">energy</td>
+<td style="text-align:left">Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.</td>
+<td style="text-align:left">Spotify</td>
+</tr>
+<tr>
+<td style="text-align:left">speechiness</td>
+<td style="text-align:left">Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are probably made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.</td>
+<td style="text-align:left">Spotify</td>
+</tr>
+<tr>
+<td style="text-align:left">acousticness</td>
+<td style="text-align:left">A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.</td>
+<td style="text-align:left">Spotify</td>
+</tr>
+<tr>
+<td style="text-align:left">instrumentalness</td>
+<td style="text-align:left">Predicts whether a track contains no vocals. “Ooh” and “aah” sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly “vocal”. The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0.</td>
+<td style="text-align:left">Spotify</td>
+</tr>
+<tr>
+<td style="text-align:left">liveness</td>
+<td style="text-align:left">Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. A value above 0.8 provides strong likelihood that the track is live.</td>
+<td style="text-align:left">Spotify</td>
+</tr>
+<tr>
+<td style="text-align:left">valence</td>
+<td style="text-align:left">A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).</td>
+<td style="text-align:left">Spotify</td>
+</tr>
+<tr>
+<td style="text-align:left">tempo</td>
+<td style="text-align:left">The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.</td>
+<td style="text-align:left">Spotify</td>
+</tr>
+<tr>
+<td style="text-align:left">duration_ms</td>
+<td style="text-align:left">Duration of song in milliseconds</td>
+<td style="text-align:left">Spotify</td>
+</tr>
+<tr>
+<td style="text-align:left">popularity</td>
+<td style="text-align:left">Song Popularity (0-100) where higher is better</td>
+<td style="text-align:left">Spotify</td>
+</tr>
+<tr>
+<td style="text-align:left">Millions</td>
+<td style="text-align:left">Concerts' revenue (in million dollars)</td>
+<td style="text-align:left">Pollstar.com</td>
+</tr>
+</tbody>
+</table>
+<p><em>More features and features' definitions can be found on
+<a href="https://developer.spotify.com/documentation/web-api/reference/#category-artists">Spotify API website</a></em></p>
+<p>Before building models, we performed feature selection since we have 22 variables in total, including the dependent variable, which might be a problem since we only have 162 data points. We chose the top 11 important features by looking at the correlation matrix (since all of our variables remaining after cleaning are numerical), along with doing backward and forward selection using R-squared as the scoring criteria. We ruled out several predictors and selected only important variables to be our predictors. As a result, the final selected predictors are only 11 variables: YouTube&rsquo;s statistics like View, Dislike; Spotify&rsquo;s song metrics like danceability, energy, acousticness, instrumentalness, liveness, duration (in milliseconds); and text sentiment analysis' score like negative, positive and compound scores.</p>
+<figure><img src="https://vdai1999.github.io/DaiDong_Portfolio/images/Picture1.png"/><figcaption>
+            <h4>Figure 1: Correlation matrix for numerical variables</h4>
+        </figcaption>
+</figure>
+
+<h3 id="data-analysis-and-model-evaluation">Data Analysis and Model Evaluation</h3>
+<p>Due to the small size of the collected data set, cross-validation was applied in order to increase predicting power. In particular, Leave One out of Cross-Validation (a.k.a, LOOCV), a special case of cross-validation method where the number of folds and the number of instances in the data set are the same, was used. Five different statistical learning methods were
+selected which were decision tree, random forest, k-nearest neighbors, Lasso Regression, and Ridge Regression. To find the final best-performing model, Root Mean Square Error (RMSE) was picked as a metric to evaluate the performance of models. Finally, the Ridge regression model was selected as the most &ldquo;optimal&rdquo; model among all constructed ones as it has the smallest RMSE of 114.12892. Using the final model, we predicted the ticket sales for concerts that might be held in 2020 by those artists in the test set. The below plot is Ed Sheeran&rsquo;s concert sales for the period of 2018 to 2020.</p>
+<figure><img src="https://vdai1999.github.io/DaiDong_Portfolio/images/Picture2.png"/><figcaption>
+            <h4>Figure 2: Ed Sheeran&#39;s concert sales by year (2018-2019 is actual data, 2020 is predicted data)</h4>
+        </figcaption>
+</figure>
+
+<p>Overall, the predicted sales output by the final model is much smaller compared to those of the previous year. One suspect is that this difference in sales prediction is due to the fact that the songs included in this test data set were released in the beginning half of 2020, which means these music videos are much newer and would generally have fewer views and likes compared to the artists' earlier, more famous songs. One of the approaches to fix this limitation is to take the average of the number of views, likes, dislikes for a specific period of time like a day or a month, to normalize the difference in view and like numbers resulting from different video publishing dates, which might help to better predict the sales.</p>
+<p><a href="https://github.com/VDai1999/ConcertTicketSale.git">Link to Github Repository</a></p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://vdai1999.github.io/DaiDong_Portfolio/" >
+    &copy;  Dai Dong 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+<a href="https://github.com/VDai1999" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+  <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+  <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
+</svg>
+
+<span class="new-window"><svg  height="8px"  style="enable-background:new 0 0 1000 1000;" version="1.1" viewBox="0 0 1000 1000" width="8px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+<path d="M598 128h298v298h-86v-152l-418 418-60-60 418-418h-152v-86zM810 810v-298h86v298c0 46-40 86-86 86h-596c-48 0-86-40-86-86v-596c0-46 38-86 86-86h298v86h-298v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+</span></a>
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

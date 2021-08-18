@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on Dai Dong</title>
+    <link>https://vdai1999.github.io/DaiDong_Portfolio/post/</link>
+    <description>Recent content in Projects on Dai Dong</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Mar 2017 12:00:00 -0500</lastBuildDate><atom:link href="https://vdai1999.github.io/DaiDong_Portfolio/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>COVID-19 Dashboard</title>
+      <link>https://vdai1999.github.io/DaiDong_Portfolio/post/chapter-6/</link>
+      <pubDate>Tue, 03 Aug 2021 11:15:58 -0400</pubDate>
+      
+      <guid>https://vdai1999.github.io/DaiDong_Portfolio/post/chapter-6/</guid>
+      <description>This dashboard allows users to view the overall summary statistics of COVID-19 in the U.S. This app also lets users interact with the app to see trends by region and by state.
+Link to COVID-19 Dashboard
+Link to Github Repository</description>
+    </item>
+    
+    <item>
+      <title>Predicting the Rate of COVID-19 Daily Deaths in California and Florida</title>
+      <link>https://vdai1999.github.io/DaiDong_Portfolio/post/chapter-2/</link>
+      <pubDate>Sat, 15 May 2021 11:00:59 -0400</pubDate>
+      
+      <guid>https://vdai1999.github.io/DaiDong_Portfolio/post/chapter-2/</guid>
+      <description>Coronavirus-19, or COVID-19, has been a global pandemic that has shocked the world for over a year now. Non-essential workers work from home, essential workers risk their lives and go in to work, some companies have laid hundreds if not thousands of employees off, businesses shut down, and families and friends have lost many loved ones due to COVID-19. Furthermore, the impact of COVID-19 has been clear-cut for the healthcare industry in the United States and worldwide.</description>
+    </item>
+    
+    <item>
+      <title>The Analysis of Job Change of Data Scientists</title>
+      <link>https://vdai1999.github.io/DaiDong_Portfolio/post/chapter-3/</link>
+      <pubDate>Wed, 05 May 2021 11:13:32 -0400</pubDate>
+      
+      <guid>https://vdai1999.github.io/DaiDong_Portfolio/post/chapter-3/</guid>
+      <description>With the rise of Big Data and Data Science, many companies desire to hire data scientists to gain more internal and external insights. A company wants to hire data scientists among a group of people who participate in and pass some courses offered by the company. The chosen data set of the company was retrieved from the Kaggle website which is an online and free community for people who are interested in the data science and machine learning field.</description>
+    </item>
+    
+    <item>
+      <title>The Changes in Children’s Dental Habits and Perception Before and After a Reading Curriculum</title>
+      <link>https://vdai1999.github.io/DaiDong_Portfolio/post/chapter-4/</link>
+      <pubDate>Sat, 14 Nov 2020 11:15:58 -0400</pubDate>
+      
+      <guid>https://vdai1999.github.io/DaiDong_Portfolio/post/chapter-4/</guid>
+      <description>The purpose of this experiment is to investigate the changes in children’s oral health habits, dental check-ups, and their feelings about going to the dentist before and after the curriculum intervention. The study was conducted on a pilot study of 316 parents-children who took an online Qualtrics survey before and after exposure to one chapter of the oral health curriculum. In this research, children whose ages were from 9 to 11 years old were chosen.</description>
+    </item>
+    
+    <item>
+      <title>Cold Stress effects on the locomotion of crickets</title>
+      <link>https://vdai1999.github.io/DaiDong_Portfolio/post/chapter-5/</link>
+      <pubDate>Sat, 26 Sep 2020 11:15:58 -0400</pubDate>
+      
+      <guid>https://vdai1999.github.io/DaiDong_Portfolio/post/chapter-5/</guid>
+      <description>The purpose of this research is to learn how cold stress affects the behavior of crickets, in particular, locomotion behavior. It has been argued that locomotion is the root of all complex behavior (Martin 2004), and as such, this study will be helpful in determining the relationship between cold stress and other complex behaviors, such as courtship or competition. We are hypothesizing that cold stress will have a detrimental effect on cricket locomotion.</description>
+    </item>
+    
+    <item>
+      <title>Predicting Music Artists&#39; Concert Sales Using YouTube and Spotify Data</title>
+      <link>https://vdai1999.github.io/DaiDong_Portfolio/post/chapter-1/</link>
+      <pubDate>Thu, 07 May 2020 10:58:08 -0400</pubDate>
+      
+      <guid>https://vdai1999.github.io/DaiDong_Portfolio/post/chapter-1/</guid>
+      <description>There is an undeniably popular trend in the entertainment industry nowadays: more and more artists are using YouTube as the platform to market their products. People are definitely used to watching YouTube videos that are heavily invested in, in terms of both time-effort and budget, by top artists around the world. According to Marketwatch.com, Taylor Swift’s “Look what you made me do” music video has a scene of her in a bathtub full of diamonds, which places the cost of making the video higher than 10 million (Wolfson, “5 of the most expensive music videos ever made”).</description>
+    </item>
+    
+  </channel>
+</rss>
